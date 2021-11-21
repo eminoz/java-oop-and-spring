@@ -3,15 +3,16 @@ package com.getir.nortwind.business.abstracts;
 import com.getir.nortwind.core.utilities.results.DataResult;
 import com.getir.nortwind.core.utilities.results.Result;
 import com.getir.nortwind.entities.concretes.Product;
+import com.getir.nortwind.entities.dtos.ProductWithCategoryDto;
 
 import java.util.List;
 
 public interface ProductService {
     DataResult<List<Product>> getAll();
 
-    DataResult<List<Product>> getAllSorted();
-
     DataResult<List<Product>> getAll(int pageNo, int pageSize);
+
+    DataResult<List<Product>> getAllSorted();
 
     Result add(Product product);
 
@@ -29,5 +30,6 @@ public interface ProductService {
 
     DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
 
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
 }
